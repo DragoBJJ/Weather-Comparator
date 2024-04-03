@@ -1,13 +1,13 @@
 import type { Meta, StoryFn } from '@storybook/react';
+import { BasicTypographyProps, TypographyProps } from '../../../types/typography';
 import { Typography } from './typography';
-import { TypographyProps } from '../../../types/typography';
 export default {
   title: 'Atoms/Typography',
   component: Typography,
   argTypes: {},
 } as Meta<typeof Typography>;
 
-const Template: StoryFn<TypographyProps> = (args) => <Typography {...args} />;
+const Template: StoryFn<TypographyProps & BasicTypographyProps> = (args) => <Typography {...args} />;
 
 export const Primary = Template.bind({});
 export const Secondary = Template.bind({});
@@ -15,9 +15,9 @@ export const Third = Template.bind({});
 export const Fourth = Template.bind({});
 
 Primary.args = {
-  tag: 'p',
+  tag: "p",
   children: 'Hello World',
-  textColor: 'blue',
+  textColor: "blue",
   textSize: 'xl',
   fontFamily: 'sans',
 };

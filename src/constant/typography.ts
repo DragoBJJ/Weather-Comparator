@@ -1,6 +1,7 @@
 export const FontSize = {
   sm: 'text-xs',
-  base: 'text-sm',
+  base: 'text-base',
+  lg: 'text-lg',
   xl: 'text-xl',
   '2xl': 'text-2xl',
   '3xl': 'text-3xl',
@@ -12,4 +13,17 @@ export const FontStyle = {
   sans: 'font-sans',
   serif: 'font-serif',
   mono: 'font-mono',
+} as const;
+
+export const TypographyPosition = {
+  left: 'text-left',
+  center: 'text-center',
+  right: 'text-right',
+} as const;
+
+export const TypographySpace = {
+  default: 'my-0',
+  sm: 'my-1',
+  md: 'my-2',
+  lg: 'my-3',
 } as const;

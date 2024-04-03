@@ -1,22 +1,36 @@
-import { memo } from 'react';
+import { ReactNode, memo } from 'react';
 import { BGColorVariants } from '../../../constant/colors';
-import { ButtonSizeVariants } from '../../../constant/size';
+import { ButtonPositionVariants, ButtonSizeVariants } from '../../../constant/size';
 
 type ColorKey = keyof typeof BGColorVariants;
 type SizeKey = keyof typeof ButtonSizeVariants;
+type Position = keyof typeof ButtonPositionVariants;
 
 export type ButtonProps = {
-  text: string;
+  children: ReactNode;
   bgColor: ColorKey;
   size: SizeKey;
+  position?: Position;
+  onClick?: () => void;
 };
 
-export const Button = memo<ButtonProps>(({ text, bgColor, size }) => {
+const getButtonDynamicProps = ({ bgColor, size, position = 'center' }: Omit<ButtonProps, 'children'>) => {
+  return [BGColorVariants[bgColor], ButtonSizeVariants[size], ButtonPositionVariants[position]]
+    .filter((item) => !!item)
+    .join(' ');
+};
+
+export const Button = memo<ButtonProps>(({ children, bgColor, size, onClick, position = 'center' }) => {
   return (
     <button
-      className={`${BGColorVariants[bgColor]} ${ButtonSizeVariants[size]} text-white hover:scale-105 transition-all ease-in-out duration-300  content-center hover:cursor-pointer text-md shadow-md  tracking-wider  rounded-md  text-center`}
+      onClick={() => onClick}
+      className={`flex justify-center items-center ${getButtonDynamicProps({
+        bgColor,
+        size,
+        position,
+      })} text-white hover:scale-105 transition-all ease-in-out duration-300  hover:cursor-pointer text-md shadow-md  tracking-wider  rounded-md text-center`}
     >
-      {text}
+      {children}
     </button>
   );
 });

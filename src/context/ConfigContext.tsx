@@ -5,7 +5,7 @@ type Config = {
   appVersion: string
 }
 
-export const ConfigContext = createContext<Config>({} as Config);
+export const ConfigContext = createContext<Config>({appVersion: ""} as Config);
 
 interface ConfigProviderProps {
   children: ReactNode;

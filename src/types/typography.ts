@@ -1,24 +1,27 @@
 import { ReactNode } from 'react';
 import { TextBGColorVariants } from '../constant/colors';
-import { FontSize, FontStyle } from '../constant/typography';
+import { FontSize, FontStyle, TypographyPosition, TypographySpace } from '../constant/typography';
 
 export type TagVariants = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p' | 'span' | 'cite';
 
 export type TextColorVariants = keyof typeof TextBGColorVariants;
 export type TextSizeVariants = keyof typeof FontSize;
+export type TextPosition = keyof typeof TypographyPosition;
+export type TextSpace = keyof typeof TypographySpace;
 export type FontFamilyVariants = keyof typeof FontStyle;
 
-export type BasicTypography = {
+export type BasicTypographyProps = {
   tag: TagVariants;
   children: ReactNode;
+  className?: string;
 };
 
-export type TypographyProps = {
+export type DynamicTypographyProps = {
   textColor: TextColorVariants;
   textSize: TextSizeVariants;
-  fontFamily: FontFamilyVariants;
-} & BasicTypography;
+  fontFamily?: FontFamilyVariants;
+  textPosition: TextPosition;
+  textSpace?: TextSpace;
+};
 
-export type TypographyDynamicProps = {
-  className: string;
-} & BasicTypography;
+export type TypographyProps = BasicTypographyProps & DynamicTypographyProps;

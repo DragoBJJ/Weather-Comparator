@@ -6,26 +6,23 @@ export default {
   component: Button,
 } as Meta<typeof Button>;
 
-const Template: StoryFn<ButtonProps> = (args) => <Button {...args} />;
+const Template: StoryFn<ButtonProps> = (args) => <Button {...args} >Sign In</Button>
 
 export const Primary = Template.bind({});
 export const Secondary = Template.bind({});
 export const Third = Template.bind({});
 
 Primary.args = {
-  text: 'Sign In',
-  bgColor: "cashmere",
+  bgColor: 'cashmere',
   size: 'small',
 };
 
 Secondary.args = {
-  text: 'Register',
   bgColor: 'blue',
   size: 'medium',
 };
 
 Third.args = {
-  text: 'Pay',
   bgColor: 'red',
   size: 'large',
 };
