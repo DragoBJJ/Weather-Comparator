@@ -1,4 +1,4 @@
-import { API_URL, GEOLOCATION_API } from '../../constant/api';
+import { API_URL, LOCATION_API } from '../../constant/api';
 import { APIParam, GEOApiParam } from '../../types/api';
 
 export const buildApiURl = ({ lat, lon, part, apiKey }: APIParam) => {
@@ -6,7 +6,7 @@ export const buildApiURl = ({ lat, lon, part, apiKey }: APIParam) => {
   return `${API_URL}${dynamicParams}`;
 };
 
-export const buildGeoUrl = ({ city, stateCode, countryCode, limit, apiKey }: GEOApiParam) => {
-  const dynamicParamas = `${city},${stateCode},${countryCode}&limit=${limit}&appid=${apiKey}`;
-  return `${GEOLOCATION_API}${dynamicParamas}`;
+export const buildLocationUrl = ({ city, limit, apiKey }: GEOApiParam) => {
+  const dynamicParamas = `${city},&limit=${limit}&appid=${apiKey}`;
+  return `${LOCATION_API}${dynamicParamas}`;
 };

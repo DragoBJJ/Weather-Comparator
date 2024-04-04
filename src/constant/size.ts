@@ -15,7 +15,8 @@ export const InputSizeVariants = {
   medium: 'h-14 w-96',
 } as const;
 
-export const InputLoginVariants = {
+export const InputLoginType = {
   email: 'email',
   password: 'password',
+  text: 'text',
 } as const;

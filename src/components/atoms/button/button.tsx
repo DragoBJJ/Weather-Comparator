@@ -8,23 +8,24 @@ type Position = keyof typeof ButtonPositionVariants;
 
 export type ButtonProps = {
   children: ReactNode;
+  btnHandler?: () => void;
   bgColor: ColorKey;
   size: SizeKey;
   position?: Position;
-  onClick?: () => void;
 };
 
-const getButtonDynamicProps = ({ bgColor, size, position = 'center' }: Omit<ButtonProps, 'children'>) => {
+const getButtonDynamicProps = ({ bgColor, size, position = 'center' }: Omit<ButtonProps, 'children' | "onClick">) => {
   return [BGColorVariants[bgColor], ButtonSizeVariants[size], ButtonPositionVariants[position]]
     .filter((item) => !!item)
     .join(' ');
 };
 
-export const Button = memo<ButtonProps>(({ children, bgColor, size, onClick, position = 'center' }) => {
+export const Button = memo<ButtonProps>(({ children, btnHandler, bgColor, size, position = 'center' }) => {
+
   return (
     <button
-      onClick={() => onClick}
-      className={`flex justify-center items-center ${getButtonDynamicProps({
+         onClick={btnHandler}
+        className={`flex justify-center items-center ${getButtonDynamicProps({
         bgColor,
         size,
         position,

@@ -1,16 +1,20 @@
-import { Button } from "./components/atoms/button/button";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { WebAppTemplate } from "./components/templates/WebAppTemplate";
+import { WeatherAppProvider } from "./context/ConfigContext";
+
+const queryClient = new QueryClient()
 
 const App = () => {
+
+
   return (
-    <WebAppTemplate>
-   <>
-   <div className="bg-white rounded-lg shadow-sm p-4 mb-4">
-        <h1 className="text-xl font-bold text-center">🚀 Weather App</h1>
-      </div>
-      <Button  bgColor="red" size="medium">Send</Button>
-   </>
-    </WebAppTemplate>
+      <QueryClientProvider client={queryClient}>
+        <WeatherAppProvider>
+      <WebAppTemplate>
+
+      </WebAppTemplate>
+      </WeatherAppProvider>
+      </QueryClientProvider>
   );
 };
 
