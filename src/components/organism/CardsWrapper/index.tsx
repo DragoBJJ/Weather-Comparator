@@ -1,11 +1,11 @@
-import { UseLocationQuery } from "../../../hooks/api/useLocationQuery";
+import { UseWeatherConditionQuery } from "../../../hooks/api/useLocationQuery";
 
 type CardsWrapperProps = {
   locationUrl?: string
 }
 export const CardsWrapper = ({locationUrl}: CardsWrapperProps
   ) => {
-    const {data, isLoading, isError, error} =  UseLocationQuery("weather", locationUrl);
+    const {data, isLoading, isError, error} =  UseWeatherConditionQuery(locationUrl);
     if(isLoading) return <div>Weather Is Loading ...</div>
     if(isError) return  <p>{error.message}</p>
     console.log("data",data)

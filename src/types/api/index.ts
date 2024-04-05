@@ -1,3 +1,5 @@
+import { AirPollution, Weather } from '../data';
+
 export type APIParam = {
   lat: number;
   lon: number;
@@ -12,4 +14,7 @@ export type APIGeoParam = {
   limit?: number;
 };
 
-export type QueryKey = 'city' | 'weather';
+export type WeatherAPIType = {
+  weatherData: Weather;
+  pollutionData: AirPollution;
+};

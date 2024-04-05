@@ -56,3 +56,28 @@ export type Weather = {
   name: string;
   cod: number;
 };
+
+export type AirPollution = {
+  coord: {
+    lat: number;
+    lon: number;
+  };
+  list: [
+    {
+      main: {
+        aqi: number;
+      };
+      components: {
+        co: number;
+        no: number;
+        no2: number;
+        o3: number;
+        so2: number;
+        pm2_5: number;
+        pm10: number;
+        nh3: number;
+      };
+      dt: number;
+    },
+  ];
+};

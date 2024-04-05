@@ -1,20 +1,16 @@
 import { useQuery } from "@tanstack/react-query";
-import axios from "axios";
-import { QueryKey } from "../../types/api";
-import { Location, Weather } from "../../types/data";
-import { createWeatherUrl } from "../../utils/api";
+import { createWeatherConditionUrl } from "../../utils/api";
+import { getLocationData, getWeatherData } from "../../utils/api/calls";
 
-export function  UseLocationQuery(key: QueryKey, apiUrl: string | undefined) {
+export function  UseWeatherConditionQuery(apiUrl: string | undefined) {
   return useQuery({
     queryKey: ["weather", apiUrl],
     queryFn: async () => {
-        if(!apiUrl) throw new Error("Your api url doesn't exist");
-      const {data: locationData} = await axios.get<Location[]>(apiUrl);
-      const weatherUrl = createWeatherUrl(locationData);
-      if(!weatherUrl) throw new Error("Your Location doesn't exist");
-      const {data} = await axios.get<Weather[]>(weatherUrl);
-      console.log("weather data from rtk", data)
-      return data;
+     const locationData = await getLocationData(apiUrl);
+      const res = createWeatherConditionUrl(locationData);
+      if(!res) throw new Error("Your Location doesn't exist");
+        const {weatherUrl, pollutionURL} = res;
+        return  getWeatherData(weatherUrl, pollutionURL);
     },
     enabled: !!apiUrl
   });
