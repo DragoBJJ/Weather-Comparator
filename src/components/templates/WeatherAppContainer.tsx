@@ -8,7 +8,6 @@ export const WeatherAppContainer = (
   ) => {
 
     const {locationUrl} = UseWeatherAppContext();
-    console.log("locationUrl", locationUrl)
 
   return (
     <div className="flex flex-col w-full h-full border-2px border-solid border-red">
@@ -16,7 +15,7 @@ export const WeatherAppContainer = (
           <Typography tag="h1" textSize="2xl" textColor="blue" textPosition="center">🚀 Weather App</Typography>
           <WeatherSearchBar/>
         </div>
-        {locationUrl && <CardsWrapper locationUrl={locationUrl} /> }
+        {locationUrl ? <CardsWrapper locationUrl={locationUrl} /> : <></> }
     </div>
   )
 }

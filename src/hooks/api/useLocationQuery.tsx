@@ -8,9 +8,9 @@ export function  UseWeatherConditionQuery(apiUrl: string | undefined) {
     queryFn: async () => {
      const locationData = await getLocationData(apiUrl);
       const res = createWeatherConditionUrl(locationData);
-      if(!res) throw new Error("Your Location doesn't exist");
+        if(!res) throw new Error("Your Location doesn't exist");
         const {weatherUrl, pollutionURL} = res;
-        return  getWeatherData(weatherUrl, pollutionURL);
+        return getWeatherData(weatherUrl, pollutionURL);
     },
     enabled: !!apiUrl
   });

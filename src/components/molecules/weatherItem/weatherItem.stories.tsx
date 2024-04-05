@@ -1,13 +1,13 @@
 import type { Meta, StoryFn } from '@storybook/react';
+import { WeatherItem, WeatherItemType } from '.';
 import imageCard from '../../../public/images/custom.jpg';
-import { CartItem, CartItemType } from './cartItem';
 
 export default {
-  title: 'molecules/CarItem',
-  component: CartItem,
-} as Meta<typeof CartItem>;
+  title: 'molecules/WeatherItem',
+  component: WeatherItem,
+} as Meta<typeof WeatherItem>;
 
-const Template: StoryFn<CartItemType> = (args) => <CartItem {...args} />;
+const Template: StoryFn<WeatherItemType> = (args) => <WeatherItem {...args} />;
 
 export const Primary = Template.bind({});
 
