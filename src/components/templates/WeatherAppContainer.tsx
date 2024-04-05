@@ -4,7 +4,7 @@ import { WeatherSearchBar } from "../molecules/WeatherSearchBar";
 import { CardsWrapper } from "../organism/CardsWrapper";
 
 
-export const WebAppTemplate = (
+export const WeatherAppContainer = (
   ) => {
 
     const {locationUrl} = UseWeatherAppContext();
