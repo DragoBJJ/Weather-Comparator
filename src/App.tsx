@@ -10,9 +10,7 @@ const App = () => {
   return (
       <QueryClientProvider client={queryClient}>
         <WeatherAppProvider>
-      <WebAppTemplate>
-
-      </WebAppTemplate>
+            <WebAppTemplate/>
       </WeatherAppProvider>
       </QueryClientProvider>
   );

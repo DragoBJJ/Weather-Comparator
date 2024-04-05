@@ -15,6 +15,11 @@ export const InputSizeVariants = {
   medium: 'h-14 w-96',
 } as const;
 
+export const InputBorderVariants = {
+  oceanBlue: 'border-[1px]  border-solid border-oceanBlue',
+  red: 'border-[1px] border-solid border-primaryRed',
+} as const;
+
 export const InputLoginType = {
   email: 'email',
   password: 'password',

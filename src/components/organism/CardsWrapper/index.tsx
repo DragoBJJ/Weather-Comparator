@@ -1,16 +1,14 @@
 import { UseLocationQuery } from "../../../hooks/api/useLocationQuery";
 
 type CardsWrapperProps = {
-  url: string
+  locationUrl?: string
 }
-
-export const CardsWrapper = ({url}: CardsWrapperProps
+export const CardsWrapper = ({locationUrl}: CardsWrapperProps
   ) => {
-
-    const {data, isLoading} =  UseLocationQuery("city", url);
-    if(isLoading) return <div>Is Loading ...</div>
-
-    console.log("data", data);
+    const {data, isLoading, isError, error} =  UseLocationQuery("weather", locationUrl);
+    if(isLoading) return <div>Weather Is Loading ...</div>
+    if(isError) return  <p>{error.message}</p>
+    console.log("data",data)
   return (
     <div className="flex flex-col w-full h-full border-2px border-solid border-red">
     </div>

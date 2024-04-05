@@ -1,6 +1,6 @@
 import { ReactNode, memo } from 'react';
 import { BGColorVariants } from '../../../constant/colors';
-import { ButtonPositionVariants, ButtonSizeVariants } from '../../../constant/size';
+import { ButtonPositionVariants, ButtonSizeVariants } from '../../../constant/input';
 
 type ColorKey = keyof typeof BGColorVariants;
 type SizeKey = keyof typeof ButtonSizeVariants;

@@ -7,12 +7,16 @@ import { Input } from "../../atoms/input/input";
 export const WeatherSearchBar = () => {
 
   const [city, setCity] = useState("");
-  const {setLocationUrl} = UseWeatherAppContext();
+  const {createLocationUrl} = UseWeatherAppContext();
 
   return  (
     <div>
-      <Input type="text" setValue={setCity} size="small" placeholder="Choose some City" />
-      <Button btnHandler={()=> setLocationUrl(city)} bgColor="red" size="medium">Send</Button>
+      <Input type="text" setValue={setCity} border="oceanBlue" value={city} size="small" placeholder="Choose some City" />
+      <Button btnHandler={()=>  {
+        if(!city.length) return
+        createLocationUrl(city)
+        setCity("");
+      }} bgColor="red" size="medium">Send</Button>
     </div>
   );
 }

@@ -7,7 +7,8 @@ import { CardsWrapper } from "../organism/CardsWrapper";
 export const WebAppTemplate = (
   ) => {
 
-    const {url} = UseWeatherAppContext();
+    const {locationUrl} = UseWeatherAppContext();
+    console.log("locationUrl", locationUrl)
 
   return (
     <div className="flex flex-col w-full h-full border-2px border-solid border-red">
@@ -15,7 +16,7 @@ export const WebAppTemplate = (
           <Typography tag="h1" textSize="5xl" textColor="blue" textPosition="center" className="text-xl font-bold text-center">🚀 Weather App</Typography>
           <WeatherSearchBar/>
         </div>
-       {url && <CardsWrapper url={url}/>}
+        {locationUrl && <CardsWrapper locationUrl={locationUrl} /> }
     </div>
   )
 }

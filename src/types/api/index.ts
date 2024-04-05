@@ -1,7 +1,6 @@
 export type APIParam = {
-  lat: string;
-  lon: string;
-  part: string;
+  lat: number;
+  lon: number;
   apiKey: string;
 };
 
