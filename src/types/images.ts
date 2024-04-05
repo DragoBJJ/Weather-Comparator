@@ -8,5 +8,5 @@ export const Images: ImagesType = {
   Clouds: '/src/public/images/clouds.jpg',
   Clear: '/src/public/images/clearSky.jpg',
   Haze: '/src/public/images/haze.jpg',
-  Rain: "'/src/public/images/rain.jpg'",
+  Rain: '/src/public/images/rain.jpg',
 };

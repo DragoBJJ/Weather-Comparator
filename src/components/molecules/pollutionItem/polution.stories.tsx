@@ -1,13 +1,13 @@
 import type { Meta, StoryFn } from '@storybook/react';
+import { PolutionItem, PolutionItemType } from '.';
 import Image from '../../../public/images/custom.jpg';
-import { Teaser, TeaserProps } from './teaser';
 
 export default {
-  title: 'molecules/Teaser',
-  component: Teaser,
-} as Meta<typeof Teaser>;
+  title: 'molecules/PolutionItem',
+  component: PolutionItem,
+} as Meta<typeof PolutionItem>;
 
-const Template: StoryFn<TeaserProps> = (args) => <Teaser {...args} />;
+const Template: StoryFn<PolutionItemType> = (args) => <PolutionItem {...args} />;
 
 export const Primary = Template.bind({});
 

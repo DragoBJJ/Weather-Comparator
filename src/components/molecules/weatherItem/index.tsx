@@ -12,14 +12,14 @@ export const WeatherItem = ({ weatherData, onHandler }: WeatherItemType) => {
 
   const {weather, main: temp, name ,sys: {country}} = weatherData;
   const {id,main,description} = weather[0] || {};
+  const imageSrc = Images[main as keyof ImagesType] ??  "";
 
-  const imageSrc = Images[main as keyof ImagesType];
   return (
     <div
       onClick={() => onHandler && onHandler(id)}
       className="overflow-hidden bg-white flex justify-center align-middle flex-col w-full max-w-[350px] h-[550px] cursor-pointer shadow-xl rounded-xl"
     >
-      <img src={imageSrc} alt={main} className="w-full h-[70%]" />
+   {imageSrc && <img src={imageSrc} alt={main} className="w-full h-[70%]" />}
       <div className="flex flex-col w-full  py-8 px-4">
       <Typography tag="h2" textColor="black" fontFamily="serif" textSize="xl" textPosition="left">
           {country} - {name.toUpperCase()}
