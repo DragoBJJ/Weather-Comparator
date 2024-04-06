@@ -9,7 +9,7 @@ export const calculateCelciusTemp = (temp: number) => {
 }
 
 export const mapPollutionValue  = (components: PollutionApiData["components"])=> {
-  return Object.keys(components).map((item, index)=> {
+   return Object.keys(components).map((item, index)=> {
    const key  = item as keyof PollutionApiData["components"];
    const pollutionItem  = PollutionData[key] ?? null;
    if(pollutionItem) {
