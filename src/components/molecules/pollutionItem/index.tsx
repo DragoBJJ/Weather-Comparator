@@ -3,7 +3,7 @@ import { PollutionApiData } from '../../../types/data/pollutionData';
 import { mapPollutionValue } from '../../../utils/common';
 import { Typography } from '../../atoms/typography/typography';
 
-export const PolutionItem = memo<PollutionApiData>(({ components, main }) => {
+export const PollutionItem = memo<PollutionApiData>(({ components, main }) => {
 
   return (
     <div className="flex flex-col  my-2  lg:mx-2 md:flex-row justify-center items-center w-full max-w-[700px] h-[400px] bg-white rounded-2xl shadow-lg overflow-hidden">

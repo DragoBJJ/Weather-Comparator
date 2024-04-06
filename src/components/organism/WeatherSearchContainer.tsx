@@ -1,12 +1,9 @@
 import { UseWeatherAppContext } from "../../context/ConfigContext";
-import { AirPollution } from "../../types/data";
 import { Typography } from "../atoms/typography/typography";
+import { WeatherEngine } from "../molecules/WeatherEngine";
 import { WeatherSearchBar } from "../molecules/WeatherSearchBar";
-import { PolutionItem } from "../molecules/pollutionItem";
-import { WeatherItem, WeatherItemType } from "../molecules/weatherItem";
-import { CardsWrapper } from "../organism/CardsWrapper";
 
-export const WeatherAppContainer = (
+export const WeatherSearchContainer = (
   ) => {
 
     const {locationUrl, createLocationUrl, setWeatherData} = UseWeatherAppContext();
@@ -17,13 +14,7 @@ export const WeatherAppContainer = (
           <Typography tag="h1" textSize="2xl" textColor="blue" textPosition="center">🚀 Weather App</Typography>
           <WeatherSearchBar createLocationUrl={createLocationUrl}/>
         </div>
-        <CardsWrapper
-        weatherCard={({weatherData}: WeatherItemType)=> {
-          return <WeatherItem weatherData={weatherData}/>
-        }}
-        atmosphericCard={(data: AirPollution["list"][0]) => {
-          return <PolutionItem {...data}/>
-        }}
+        <WeatherEngine
         locationUrl={locationUrl}
         setWeatherData={setWeatherData}
         />

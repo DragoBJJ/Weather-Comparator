@@ -9,8 +9,8 @@ type ConfigProviderProps =  {
 type Config = {
   createLocationUrl: (city: string) => void
   locationUrl?: string
-  weatherData: WeatherType | null
-  setWeatherData: React.Dispatch<React.SetStateAction<WeatherType | null>>
+  weatherData: WeatherType[]
+  setWeatherData: React.Dispatch<React.SetStateAction<WeatherType[]>>
   appVersion: string
 }
 
@@ -18,7 +18,7 @@ export const ConfigContext = createContext<Config>({appVersion: "weather-app-v1.
 
 export const WeatherAppProvider = ({ children }: ConfigProviderProps) => {
   const [locationUrl, setUrl] = useState<string | undefined>(undefined);
-  const [weatherData, setWeatherData] = useState<WeatherType | null>(null);
+  const [weatherData, setWeatherData] = useState<WeatherType[]>([]);
 
   const createLocationUrl = (city: string) => {
     const newUrl = buildLocationUrl({city,limit:1, apiKey: process.env.API_KEY!});

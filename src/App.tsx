@@ -1,5 +1,5 @@
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { WeatherAppContainer } from "./components/templates/WeatherAppContainer";
+import { WeatherSearchContainer } from "./components/organism/WeatherSearchContainer";
 import { WeatherAppProvider } from "./context/ConfigContext";
 
 const queryClient = new QueryClient()
@@ -8,7 +8,7 @@ const App = () => {
   return (
       <QueryClientProvider client={queryClient}>
         <WeatherAppProvider>
-            <WeatherAppContainer/>
+            <WeatherSearchContainer/>
       </WeatherAppProvider>
       </QueryClientProvider>
   );
