@@ -16,13 +16,13 @@ export type PollutionApiData = {
 };
 
 export const PollutionData: Record<PollutionKeyType, string> = {
-  co: 'The concentration of carbon monoxide (CO) in micrograms per cubic meter (μg/m³)',
-  nh3: 'nh3: Concentration of ammonia (NH3) in micrograms per cubic meter (μg/m³)',
-  no: 'Concentration of nitrogen oxide (NO) in micrograms per cubic meter (μg/m³)',
-  no2: 'Concentration of nitrogen dioxide (NO2) in micrograms per cubic meter (μg/m³)',
-  o3: 'Concentration of ozone (O3) in micrograms per cubic meter (μg/m³)',
+  co: 'The concentration of carbon monoxide (CO) ',
+  nh3: 'nh3: Concentration of ammonia (NH3) ',
+  no: 'Concentration of nitrogen oxide (NO) ',
+  no2: 'Concentration of nitrogen dioxide (NO2) ',
+  o3: 'Concentration of ozone (O3) ',
   pm2_5:
-    'Concentration of particulate matter with a diameter of less than 2.5 micrometers (PM2.5) in micrograms per cubic meter (μg/m³)',
-  pm10: 'Concentration of particulate matter with a diameter of less than 10 micrometers (PM10) in micrograms per cubic meter (μg/m³)',
-  so2: 'Concentration of sulfur dioxide (SO2) in micrograms per cubic meter (μg/m³)',
+    'Concentration of particulate matter with a diameter of less than 2.5 micrometers (PM2.5) ',
+  pm10: 'Concentration of particulate matter with a diameter of less than 10 micrometers (PM10) ',
+  so2: 'Concentration of sulfur dioxide (SO2) ',
 };

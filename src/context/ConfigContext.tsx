@@ -1,4 +1,5 @@
 import { ReactNode, createContext, useContext, useState } from 'react';
+import { WeatherType } from '../types/api';
 import { buildLocationUrl } from '../utils/api';
 
 type ConfigProviderProps =  {
@@ -8,6 +9,8 @@ type ConfigProviderProps =  {
 type Config = {
   createLocationUrl: (city: string) => void
   locationUrl?: string
+  weatherData: WeatherType | null
+  setWeatherData: React.Dispatch<React.SetStateAction<WeatherType | null>>
   appVersion: string
 }
 
@@ -15,15 +18,21 @@ export const ConfigContext = createContext<Config>({appVersion: "weather-app-v1.
 
 export const WeatherAppProvider = ({ children }: ConfigProviderProps) => {
   const [locationUrl, setUrl] = useState<string | undefined>(undefined);
+  const [weatherData, setWeatherData] = useState<WeatherType | null>(null);
 
   const createLocationUrl = (city: string) => {
     const newUrl = buildLocationUrl({city,limit:1, apiKey: process.env.API_KEY!});
     setUrl(newUrl);
   }
 
+
+  console.log("weatherData", weatherData)
+
   return <ConfigContext.Provider value={{
     appVersion: __APP_VERSION__,
     createLocationUrl,
+    setWeatherData,
+    weatherData,
     locationUrl,
   }}>{children}</ConfigContext.Provider>;
 };

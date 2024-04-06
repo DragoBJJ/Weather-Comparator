@@ -17,20 +17,20 @@ export const WeatherItem = ({ weatherData, onHandler }: WeatherItemType) => {
   return (
     <div
       onClick={() => onHandler && onHandler(id)}
-      className="overflow-hidden bg-white flex justify-center align-middle flex-col w-full max-w-[350px] h-[550px] cursor-pointer shadow-xl rounded-xl"
+      className="overflow-hidden my-2 mx-4 bg-white flex  flex-col w-full max-w-[350px] h-[400px] cursor-pointer shadow-xl rounded-xl"
     >
    {imageSrc && <img src={imageSrc} alt={main} className="w-full h-[70%]" />}
       <div className="flex flex-col w-full  py-8 px-4">
-      <Typography tag="h2" textColor="black" fontFamily="serif" textSize="xl" textPosition="left">
+      <Typography tag="h2" textColor="black" fontFamily="serif" textSize="lg" textPosition="left">
           {country} - {name.toUpperCase()}
         </Typography>
-        <Typography tag="h3" textColor="black" fontFamily="serif" textSize="xl" textPosition="left" textSpace="md">
+        <Typography tag="h3" textColor="black" fontFamily="serif" textSize="base" textPosition="left" textSpace="md">
         {calculateCelciusTemp(temp.feels_like)} °C
         </Typography>
-        <Typography tag="p" textColor="black" fontFamily="serif" textSize="lg" textPosition="left">
+        <Typography tag="p" textColor="black" fontFamily="serif" textSize="base" textPosition="left">
           {main}
         </Typography>
-        <Typography  tag="p" textColor="black" fontFamily="mono" textSize="lg" textPosition="left">
+        <Typography  tag="p" textColor="black" fontFamily="mono" textSize="base" textPosition="left">
           {description}
         </Typography>
       </div>

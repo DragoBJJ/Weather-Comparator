@@ -18,3 +18,8 @@ export type WeatherAPIType = {
   weatherData: Weather;
   pollutionData: AirPollution;
 };
+
+export type WeatherType = {
+  weatherData: Weather;
+  pollutionData: AirPollution['list'][0];
+};

@@ -15,7 +15,7 @@ export const mapPollutionValue  = (components: PollutionApiData["components"])=>
    if(pollutionItem) {
      return  (
          <Typography key={`${key}-${index}`} tag="p" textColor="black" fontFamily="serif" textSize="base" textPosition="left">
-             {pollutionItem}: <Typography textColor='blue' textSize="base" textPosition="center" tag="span">{components[key]}</Typography>
+             {pollutionItem}: <Typography textColor='blue' textSize="base" textPosition="center" tag="span">{components[key]} (μg/m³)</Typography>
        </Typography>
      )
      }
