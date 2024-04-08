@@ -6,7 +6,7 @@ import { WeatherSearchBar } from "../molecules/WeatherSearchBar";
 export const WeatherSearchContainer = (
   ) => {
 
-    const {locationUrl, createLocationUrl, setWeatherData} = UseWeatherAppContext();
+    const {locationUrl, createLocationUrl, setUniqeWeatherData} = UseWeatherAppContext();
 
   return (
     <div className="flex flex-col w-full h-full border-2px border-solid border-red">
@@ -14,10 +14,12 @@ export const WeatherSearchContainer = (
           <Typography tag="h1" textSize="2xl" textColor="blue" textPosition="center">🚀 Weather App</Typography>
           <WeatherSearchBar createLocationUrl={createLocationUrl}/>
         </div>
-        <WeatherEngine
+       {locationUrl ?
+       <WeatherEngine
         locationUrl={locationUrl}
-        setWeatherData={setWeatherData}
+        setWeatherData={setUniqeWeatherData}
         />
+       : <></>}
     </div>
   )
 }

@@ -8,16 +8,16 @@ import { WeatherItem, WeatherItemType } from "../weatherItem";
 
 
 type WeatherEngineType = {
-  locationUrl?:  string | undefined,
-  setWeatherData?:React.Dispatch<React.SetStateAction<WeatherType[]>>
+  locationUrl?:  string,
+  setWeatherData: (data: WeatherType) => void
 }
 export const WeatherEngine = memo<WeatherEngineType>(({locationUrl, setWeatherData}) => {
 
     const {data, isLoading, isError, error} =  UseWeatherConditionQuery(locationUrl);
 
     useEffect(()=> {
-      if(!data || !setWeatherData) return
-      setWeatherData((prev)=> [...prev, data])
+      if(!data) return
+      setWeatherData(data);
     },[data, setWeatherData])
 
     if(isLoading) return <div>Weather Is Loading ...</div>

@@ -10,7 +10,7 @@ type Config = {
   createLocationUrl: (city: string) => void
   locationUrl?: string
   weatherData: WeatherType[]
-  setWeatherData: React.Dispatch<React.SetStateAction<WeatherType[]>>
+  setUniqeWeatherData: (data: WeatherType) => void
   appVersion: string
 }
 
@@ -25,13 +25,21 @@ export const WeatherAppProvider = ({ children }: ConfigProviderProps) => {
     setUrl(newUrl);
   }
 
+   const setUniqeWeatherData = (data: WeatherType) => {
+    setWeatherData((prev)=> {
+      const res = prev.find(({weatherData})=> weatherData.name === data?.weatherData.name)
+       if(res?.weatherData) return prev
+      return [...prev, data]
+    })
+  }
+
 
   console.log("weatherData", weatherData)
 
   return <ConfigContext.Provider value={{
     appVersion: __APP_VERSION__,
+    setUniqeWeatherData,
     createLocationUrl,
-    setWeatherData,
     weatherData,
     locationUrl,
   }}>{children}</ConfigContext.Provider>;
