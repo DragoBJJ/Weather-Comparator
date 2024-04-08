@@ -29,7 +29,7 @@ export const Button = memo<ButtonProps>(({ children, btnHandler, bgColor, size, 
         bgColor,
         size,
         position,
-      })} text-white hover:scale-105 transition-all ease-in-out duration-300  hover:cursor-pointer text-md shadow-md  tracking-wider  rounded-md text-center`}
+      })} text-white hover:scale-105 transition-all ease-in-out duration-300 mt-4 hover:cursor-pointer text-md shadow-md  tracking-wider  rounded-md text-center`}
     >
       {children}
     </button>

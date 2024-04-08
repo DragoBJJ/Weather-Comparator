@@ -9,7 +9,6 @@ type WeatherSearchBarType = {
 
 export const WeatherSearchBar = memo<WeatherSearchBarType>(({createLocationUrl}) => {
 
-
   const [city, setCity] = useState("");
 
   const weatherHandler = () => {
@@ -21,7 +20,7 @@ export const WeatherSearchBar = memo<WeatherSearchBarType>(({createLocationUrl})
   return  (
     <div>
       <Input type="text" setValue={setCity} border="oceanBlue" value={city} size="small" placeholder="Choose some City" />
-      <Button btnHandler={()=> weatherHandler()} bgColor="blue" size="medium">Send</Button>
+      <Button btnHandler={()=> weatherHandler()} bgColor="blue" size="medium" position="center">Send</Button>
     </div>
   );
 })

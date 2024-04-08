@@ -19,8 +19,8 @@ export const WeatherItem = ({ weatherData, onHandler }: WeatherItemType) => {
       onClick={() => onHandler && onHandler(id)}
       className="overflow-hidden my-2 mx-4 bg-white flex  flex-col w-full max-w-[350px] h-[400px] cursor-pointer shadow-xl rounded-xl"
     >
-   {imageSrc && <img src={imageSrc} alt={main} className="w-full h-[70%]" />}
-      <div className="flex flex-col w-full  py-8 px-4">
+   {imageSrc && <img src={imageSrc} alt={main} className="w-full h-[60%]" />}
+      <div className="flex flex-col w-full  p-4">
       <Typography tag="h2" textColor="black" fontFamily="serif" textSize="lg" textPosition="left">
           {country} - {name.toUpperCase()}
         </Typography>
@@ -30,7 +30,7 @@ export const WeatherItem = ({ weatherData, onHandler }: WeatherItemType) => {
         <Typography tag="p" textColor="black" fontFamily="serif" textSize="base" textPosition="left">
           {main}
         </Typography>
-        <Typography  tag="p" textColor="black" fontFamily="mono" textSize="base" textPosition="left">
+        <Typography  tag="p" textColor="black" fontFamily="mono" textSize="base" textPosition="left" textSpace="md">
           {description}
         </Typography>
       </div>
