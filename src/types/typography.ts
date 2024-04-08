@@ -1,6 +1,11 @@
 import { ReactNode } from 'react';
-import { TextBGColorVariants } from '../constant/colors';
-import { FontSize, FontStyle, TypographyPosition, TypographySpace } from '../constant/typography';
+import { TextBGColorVariants } from '../constant/styles/colors';
+import {
+  FontSize,
+  FontStyle,
+  TypographyPosition,
+  TypographySpace,
+} from '../constant/styles/typography';
 
 export type TagVariants = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p' | 'span' | 'cite';
 

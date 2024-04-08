@@ -1,14 +1,18 @@
-import { UseWeatherAppContext } from "../../context/ConfigContext";
-import { AirPollution } from "../../types/data";
-import { PollutionItem } from "../molecules/pollutionItem";
-import { WeatherCards } from "../molecules/weatherCards";
-import { WeatherItem, WeatherItemType } from "../molecules/weatherItem";
+import { memo } from "react";
+import { WeatherType } from "../../../types/api";
+import { AirPollution } from "../../../types/data";
+import { PollutionItem } from "../../molecules/pollutionItem";
+import { WeatherCards } from "../../molecules/weatherCards";
+import { WeatherItem, WeatherItemType } from "../../molecules/weatherItem";
 
-export const WeatherComparisonEnigne = (
+
+type WeatherComparatorType = {
+  weatherData: WeatherType[]
+}
+
+
+export const WeatherComparator= memo<WeatherComparatorType>(({weatherData}
   ) => {
-
-    const {weatherData} = UseWeatherAppContext();
-
   return (
     <div className="flex flex-col w-full h-full border-2px border-solid border-red">
         {/* <div className="bg-white rounded-lg shadow-sm p-4 mb-4">>
@@ -30,4 +34,4 @@ export const WeatherComparisonEnigne = (
        }): <></>}
     </div>
   )
-}
+})

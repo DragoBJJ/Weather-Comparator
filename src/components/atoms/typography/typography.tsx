@@ -1,6 +1,6 @@
 import { createElement } from 'react';
-import { TextBGColorVariants } from '../../../constant/colors';
-import { FontSize, FontStyle, TypographyPosition, TypographySpace } from '../../../constant/typography';
+import { TextBGColorVariants } from '../../../constant/styles/colors';
+import { FontSize, FontStyle, TypographyPosition, TypographySpace } from '../../../constant/styles/typography';
 import { BasicTypographyProps, DynamicTypographyProps, TypographyProps } from '../../../types/typography';
 
 const DynamicTypography = ({ tag = 'p', children, ...props }: BasicTypographyProps) => {

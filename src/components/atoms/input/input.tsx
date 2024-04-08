@@ -1,6 +1,6 @@
 /* eslint-disable react/display-name */
 import { memo } from 'react';
-import { InputBorderVariants, InputSizeVariants } from '../../../constant/input';
+import { InputBorderVariants, InputSizeVariants } from '../../../constant/styles/input';
 import { InpuBorderKey, InpuTypeKey, SizeKey } from '../../../types/input';
 import { firstLetterUpperCase } from '../../../utils/common';
 

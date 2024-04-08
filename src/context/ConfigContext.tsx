@@ -1,6 +1,5 @@
-import { Dispatch, ReactNode, SetStateAction, createContext, useContext, useState } from 'react';
+import { ReactNode, createContext, useContext, useState } from 'react';
 import { WeatherType } from '../types/api';
-import { SwitchModeType } from '../types/eventType';
 import { buildLocationUrl } from '../utils/api';
 
 type ConfigProviderProps =  {
@@ -13,8 +12,6 @@ type Config = {
   weatherData: WeatherType[]
   setUniqeWeatherData: (data: WeatherType) => void
   appVersion: string
-  mode: SwitchModeType
-  setMode: Dispatch<SetStateAction<SwitchModeType>>
 }
 
 export const ConfigContext = createContext<Config>({appVersion: "weather-app-v1.0.0"} as Config);
@@ -23,7 +20,6 @@ export const WeatherAppProvider = ({ children }: ConfigProviderProps) => {
 
   const [locationUrl, setUrl] = useState<string | undefined>(undefined);
   const [weatherData, setWeatherData] = useState<WeatherType[]>([]);
-  const [mode, setMode] = useState<SwitchModeType>("Search");
 
   const createLocationUrl = (city: string) => {
     const newUrl = buildLocationUrl({city,limit:1, apiKey: process.env.API_KEY!});
@@ -47,8 +43,6 @@ export const WeatherAppProvider = ({ children }: ConfigProviderProps) => {
     createLocationUrl,
     weatherData,
     locationUrl,
-    mode,
-    setMode
   }}>{children}</ConfigContext.Provider>;
 };
 
