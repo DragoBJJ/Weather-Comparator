@@ -1,7 +1,7 @@
 import { memo, useEffect } from "react";
 import { UseWeatherConditionQuery } from "../../../hooks/api/useLocationQuery";
 import { WeatherType } from "../../../types/api";
-import { AirPollution } from "../../../types/data";
+import { AirPollution } from "../../../types/pollutionData";
 import { PollutionItem } from "../pollutionItem";
 import { WeatherCards } from "../weatherCards";
 import { WeatherItem, WeatherItemType } from "../weatherItem";

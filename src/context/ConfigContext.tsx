@@ -1,5 +1,6 @@
 import { ReactNode, createContext, useContext, useState } from 'react';
 import { WeatherType } from '../types/api';
+import { AirPollutionKey } from '../types/pollutionData';
 import { buildLocationUrl } from '../utils/api';
 
 type ConfigProviderProps =  {
@@ -11,6 +12,7 @@ type Config = {
   locationUrl?: string
   weatherData: WeatherType[]
   setUniqeWeatherData: (data: WeatherType) => void
+  sortWeatherData: (key: string) => void
   appVersion: string
 }
 
@@ -34,13 +36,23 @@ export const WeatherAppProvider = ({ children }: ConfigProviderProps) => {
     })
   }
 
-
-  console.log("weatherData", weatherData)
+  const sortWeatherData = (key: string) => {
+         return setWeatherData((prev)=> {
+                const newState = [...prev].sort((a, b)=> {
+                    const A = a.pollutionData["components"][key as keyof AirPollutionKey]
+                    const B = b.pollutionData["components"][key as keyof AirPollutionKey]
+                return B - A
+            })
+              if(!newState) return prev
+              return newState
+        })
+  }
 
   return <ConfigContext.Provider value={{
     appVersion: __APP_VERSION__,
     setUniqeWeatherData,
     createLocationUrl,
+    sortWeatherData,
     weatherData,
     locationUrl,
   }}>{children}</ConfigContext.Provider>;

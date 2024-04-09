@@ -1,27 +1,29 @@
 
-import { Dispatch, SetStateAction, memo } from 'react';
+import { memo } from 'react';
 import { InputBorderVariants, SelectSizeVariants } from '../../../constant/styles/input';
 import { InpuBorderKey, SizeKey } from '../../../types/input';
 import { mapDictValueToOption } from '../../../utils/common';
 
  type SelectProps<T extends Record<string,string>> = {
+  title: string
   size: SizeKey;
   border?: InpuBorderKey
   items: T
-  value: string
-  setValue: Dispatch<SetStateAction<string>>
+  handleValue?: (key: string) => void
 };
 
-function Select<T extends Record<string, string>>({ items, value, border, size, setValue }: SelectProps<T>) {
-
+function Select<T extends Record<string, string>>({ items, title, border, size, handleValue }: SelectProps<T>) {
   return (
-    <select
-      onChange={(e)=> setValue(e.target.value)}
-      value={value}
+   <div className='flex flex-col'>
+    <label htmlFor="weatherData" className='text-oceanBlue'>{title}</label>
+     <select
+      id='weatherData'
+      onChange={(e)=> handleValue && handleValue(e.target.value)}
       className={`${SelectSizeVariants[size]} ${border ? InputBorderVariants[border]: ""} pl-4 mt-4 text-black outline-none border-[1px] transition-all ease-in-out duration-100 border-cashmere  content-center hover:cursor-pointer text-md shadow-md tracking-wider  rounded-2xl`}
     >
       {mapDictValueToOption(items)}
     </select>
+   </div>
   );
 }
 

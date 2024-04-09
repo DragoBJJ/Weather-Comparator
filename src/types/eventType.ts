@@ -8,3 +8,5 @@ export const keyOptions: Record<string, KeyCode> = {
 };
 
 export type SwitchModeType = 'Search' | 'Filter';
+
+export const SwitchData: SwitchModeType[] = ['Filter', 'Search'];

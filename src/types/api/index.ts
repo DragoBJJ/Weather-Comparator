@@ -1,4 +1,5 @@
-import { AirPollution, Weather } from '../data';
+import { Weather } from '../data';
+import { AirPollution } from '../pollutionData';
 
 export type APIParam = {
   lat: number;

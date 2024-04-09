@@ -1,14 +1,14 @@
 import { useState } from "react";
-import { UseWeatherAppContext } from "../../context/ConfigContext";
-import { SwitchModeType } from "../../types/eventType";
-import { WeatherEngine } from "../molecules/WeatherEngine";
-import { WeatherComparator } from "./WeatherComparator";
-import { Navigation } from "./navigation";
+import { UseWeatherAppContext } from "../../../context/ConfigContext";
+import { SwitchModeType } from "../../../types/eventType";
+import { WeatherEngine } from "../../molecules/WeatherEngine";
+import { WeatherComparator } from "../WeatherComparator";
+import { Navigation } from "../navigation";
 
 export const WeatherContainer = (
   ) => {
 
-    const {locationUrl, weatherData, createLocationUrl, setUniqeWeatherData} = UseWeatherAppContext();
+    const {locationUrl, weatherData, setUniqeWeatherData} = UseWeatherAppContext();
     const [mode, setMode] = useState<SwitchModeType>("Search");
 
   return (
@@ -17,7 +17,7 @@ export const WeatherContainer = (
         mode={mode}
         setMode={setMode}
         title="Weather App"
-        createLocationUrl={createLocationUrl} />
+        />
        {locationUrl && mode === "Search" ?
        <WeatherEngine
         locationUrl={locationUrl}
