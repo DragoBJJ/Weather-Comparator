@@ -1,6 +1,6 @@
 import type { Meta, StoryFn } from '@storybook/react';
 import { PollutionItem } from '.';
-import { PollutionApiData } from '../../../types/data/pollutionData';
+import { PollutionApiData } from '../../../types/pollutionData';
 
 export default {
   title: 'molecules/PolutionItem',

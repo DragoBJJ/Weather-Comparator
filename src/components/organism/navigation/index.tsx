@@ -1,9 +1,9 @@
 import { Dispatch, SetStateAction, memo, useState } from "react"
 import { SwitchModeType } from "../../../types/eventType"
-import { WeatherSelectType } from "../../../types/selectType"
+import { PollutionSelectData, PollutionSelectDataType } from "../../../types/pollutionData"
 import Switch from "../../atoms/Switch"
 import { SelectInput } from "../../atoms/select"
-import { Typography } from "../../atoms/typography/typography"
+import { Typography } from "../../atoms/typography"
 import { WeatherSearchBar } from "../../molecules/WeatherSearchBar"
 
 type NavigatorType = {
@@ -13,11 +13,11 @@ mode: SwitchModeType,
 setMode: Dispatch<SetStateAction<SwitchModeType>>
 }
 
+
 export const Navigation = memo<NavigatorType>(({title, createLocationUrl,mode
 ,setMode}) => {
 
   const [selectedValue, setSelectedValue] = useState("");
-
 
   console.log("selectedValue",selectedValue)
 
@@ -27,12 +27,12 @@ export const Navigation = memo<NavigatorType>(({title, createLocationUrl,mode
     <div className="flex justify-between items-start w-full">
      {mode === 'Search' ? <WeatherSearchBar createLocationUrl={createLocationUrl}/> : <></>}
      {mode === "Filter" ?
-     <SelectInput<WeatherSelectType>
-        items={["03", "AQI", "NH3", "CO", "NO"]}
+     <SelectInput<PollutionSelectDataType>
+        items={PollutionSelectData}
         setValue={setSelectedValue}
         value={selectedValue}
         border="oceanBlue"
-        size="small"
+        size="medium"
        />
        : <></>}
       <Switch<SwitchModeType> label="Mode" values={["Filter", "Search"]} stateValue={mode} setStateValue={setMode} />

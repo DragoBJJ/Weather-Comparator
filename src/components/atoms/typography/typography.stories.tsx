@@ -1,6 +1,6 @@
 import type { Meta, StoryFn } from '@storybook/react';
+import { Typography } from '.';
 import { BasicTypographyProps, TypographyProps } from '../../../types/typography';
-import { Typography } from './typography';
 export default {
   title: 'Atoms/Typography',
   component: Typography,

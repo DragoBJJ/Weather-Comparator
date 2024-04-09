@@ -1,7 +1,7 @@
 import { Weather } from '../../../types/data';
 import { Images, ImagesType } from '../../../types/images';
 import { calculateCelciusTemp } from '../../../utils/common';
-import { Typography } from '../../atoms/typography/typography';
+import { Typography } from '../../atoms/typography';
 
 export type WeatherItemType = {
   weatherData: Weather;

@@ -1,5 +1,5 @@
-import { Typography } from "../../components/atoms/typography/typography";
-import { PollutionApiData, PollutionData } from "../../types/data/pollutionData";
+import { Typography } from "../../components/atoms/typography";
+import { PollutionApiData, PollutionData } from "../../types/pollutionData";
 
 export const firstLetterUpperCase = (word: string) => word.charAt(0).toUpperCase() + word.slice(1);
 
@@ -21,4 +21,13 @@ export const mapPollutionValue  = (components: PollutionApiData["components"])=>
      }
      return <></>
   })
+}
+
+export function mapDictValueToOption<T extends Record<string,string>>(items: T){
+  if(!items) return <></>
+ return Object.entries(items).map((item)=> {
+  return (
+    <option key={item[0]} value={item[0]}>{item[1]}</option>
+  )
+ })
 }

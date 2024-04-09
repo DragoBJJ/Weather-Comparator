@@ -1,5 +1,5 @@
 import { memo, useState } from "react";
-import { Button } from "../../atoms/button/button";
+import { Button } from "../../atoms/button";
 import { Input } from "../../atoms/input/input";
 
 

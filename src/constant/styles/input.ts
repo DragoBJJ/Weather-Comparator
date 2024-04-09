@@ -11,13 +11,13 @@ export const ButtonPositionVariants = {
 } as const;
 
 export const InputSizeVariants = {
-  small: ' h-12 w-80',
+  small: ' h-12 w-70',
   medium: 'h-14 w-96',
 } as const;
 
 export const SelectSizeVariants = {
-  small: ' h-10 w-40',
-  medium: 'h-10 w-60',
+  small: ' h-10 w-60',
+  medium: 'h-10 w-70',
 } as const;
 
 export const InputBorderVariants = {

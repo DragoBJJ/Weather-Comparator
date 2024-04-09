@@ -1,7 +1,7 @@
 import { memo } from 'react';
-import { PollutionApiData } from '../../../types/data/pollutionData';
+import { PollutionApiData } from '../../../types/pollutionData';
 import { mapPollutionValue } from '../../../utils/common';
-import { Typography } from '../../atoms/typography/typography';
+import { Typography } from '../../atoms/typography';
 
 export const PollutionItem = memo<PollutionApiData>(({ components, main }) => {
 
