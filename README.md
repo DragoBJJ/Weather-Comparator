@@ -5,7 +5,7 @@
 - [eslint]
 - [Prettier]
 - [React]
--[StoryBook]
+- [StoryBook]
 - [Playwright]
 - [Tailwind]
 - [TypeScript]
