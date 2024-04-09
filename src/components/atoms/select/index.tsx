@@ -15,7 +15,7 @@ import { mapDictValueToOption } from '../../../utils/common';
 function Select<T extends Record<string, string>>({ items, title, border, size, handleValue }: SelectProps<T>) {
   return (
    <div className='flex flex-col'>
-    <label htmlFor="weatherData" className='text-oceanBlue'>{title}</label>
+    <label htmlFor="weatherData" className=' pl-2 text-oceanBlue'>{title}</label>
      <select
       id='weatherData'
       onChange={(e)=> handleValue && handleValue(e.target.value)}

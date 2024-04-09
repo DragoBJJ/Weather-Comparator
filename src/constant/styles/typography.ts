@@ -1,6 +1,6 @@
 export const FontSize = {
   sm: 'text-xs',
-  base: 'text-sm sm:text-base',
+  base: 'text-sm md:text-base lg:text-sm xl:text-base',
   lg: 'text-lg',
   xl: 'text-xl',
   '2xl': 'text-lg md:text-xl lg:text-2xl',
