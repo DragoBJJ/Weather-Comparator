@@ -5,6 +5,7 @@
 - [eslint]
 - [Prettier]
 - [React]
+- [RTK-Query]
 - [StoryBook]
 - [Playwright]
 - [Tailwind]
@@ -19,6 +20,7 @@
 - Using Vite bundler to speed up the development process
 - Using the Atomic Design architectural approach
 - Using design patterns such as render props
+- Using RTK Query - provides a robust caching
 
 ## Structure of the project
 The project uses the Atomic Design approach, which divides the user interface into smaller, reusable components.
