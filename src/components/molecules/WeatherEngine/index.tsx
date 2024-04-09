@@ -2,6 +2,7 @@ import { memo, useEffect } from "react";
 import { UseWeatherConditionQuery } from "../../../hooks/api/useLocationQuery";
 import { WeatherType } from "../../../types/api";
 import { AirPollution } from "../../../types/components/pollutionType";
+import { Typography } from "../../atoms/typography";
 import { PollutionItem } from "../pollutionItem";
 import { WeatherCards } from "../weatherCards";
 import { WeatherItem, WeatherItemType } from "../weatherItem";
@@ -20,9 +21,8 @@ export const WeatherEngine = memo<WeatherEngineType>(({locationUrl, setWeatherDa
       setWeatherData(data);
     },[data, setWeatherData])
 
-    if(isLoading) return <p className="text-oceanBlue">Weather Is Loading ...</p>
-    if(isError) return  <p className="text-primaryRed">{error ? error.message: "Error with you weather data"}</p>
-
+    if(isLoading) return <Typography tag="h1" textSize="4xl" textColor="blue" textSpace="lg" textPosition="center">Weather is Loading...</Typography>
+    if(isError) return <Typography tag="h1" textSize="4xl" textColor="red" textSpace="lg" textPosition="center">{error ? error.message: "Error with you weather data"}</Typography>
     const {weatherData, pollutionData} = data ?? {};
 
   return (

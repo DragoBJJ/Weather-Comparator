@@ -11,7 +11,7 @@ export type WeatherItemType = {
 export const WeatherItem = ({ weatherData, onHandler }: WeatherItemType) => {
 
   const {weather, main: temp, name ,sys: {country}} = weatherData;
-  const {id,main,description} = weather[0] || {};
+  const {id,main,description} = weather[0] ?? {};
   const imageSrc = Images[main as keyof ImagesType] ??  "";
 
   return (
@@ -19,7 +19,7 @@ export const WeatherItem = ({ weatherData, onHandler }: WeatherItemType) => {
       onClick={() => onHandler && onHandler(id)}
       className="overflow-hidden my-2 mx-4 bg-white flex  flex-col w-full max-w-[350px] h-[400px] cursor-pointer shadow-xl rounded-xl"
     >
-   {imageSrc && <img src={imageSrc} alt={main} className="w-full h-[60%]" />}
+   {imageSrc ? <img src={imageSrc} alt={main} className="w-full h-[60%]" />: <></>}
       <div className="flex flex-col w-full  p-4">
       <Typography tag="h2" textColor="black" fontFamily="serif" textSize="lg" textPosition="left">
           {country} - {name.toUpperCase()}
