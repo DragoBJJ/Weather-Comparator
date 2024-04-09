@@ -20,10 +20,10 @@ export const WeatherEngine = memo<WeatherEngineType>(({locationUrl, setWeatherDa
       setWeatherData(data);
     },[data, setWeatherData])
 
-    if(isLoading) return <div>Weather Is Loading ...</div>
-    if(isError) return  <p>{error ? error.message: "Error with you weather data"}</p>
+    if(isLoading) return <p className="text-oceanBlue">Weather Is Loading ...</p>
+    if(isError) return  <p className="text-primaryRed">{error ? error.message: "Error with you weather data"}</p>
 
-    const {weatherData, pollutionData} = data || {};
+    const {weatherData, pollutionData} = data ?? {};
 
   return (
     <div className="flex flex-col lg:flex-row justify-center items-center w-full h-full">
