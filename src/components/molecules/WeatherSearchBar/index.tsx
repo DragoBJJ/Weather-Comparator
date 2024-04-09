@@ -18,9 +18,9 @@ export const WeatherSearchBar = memo<WeatherSearchBarType>(({createLocationUrl})
   }
 
   return  (
-    <div className="flex flex-col mr-20">
-      <Input type="text" setValue={setCity} border="oceanBlue" value={city} size="small" placeholder="Choose some City" />
-      <Button btnHandler={()=> weatherHandler()} bgColor="blue" size="medium" position="center">Send</Button>
+    <div className="flex flex-col mr-auto">
+      <Input type="text" setValue={setCity} border="oceanBlue" value={city} size="small" placeholder="Choose City" />
+      <Button btnHandler={()=> weatherHandler()} bgColor="blue" size="medium" position="center">Check weather</Button>
     </div>
   );
 })

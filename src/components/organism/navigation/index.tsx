@@ -1,4 +1,4 @@
-import { Dispatch, SetStateAction, memo } from "react"
+import { Dispatch, SetStateAction, useMemo } from "react"
 import { PollutionSelectData } from "../../../constant/components/pollutionData"
 import { UseWeatherAppContext } from "../../../context/ConfigContext"
 import { PollutionSelectDataType } from "../../../types/components/pollutionType"
@@ -14,28 +14,28 @@ mode: SwitchModeType,
 setMode: Dispatch<SetStateAction<SwitchModeType>>
 }
 
-export const Navigation = memo<NavigatorType>(({title, mode
-,setMode}) => {
+export const Navigation = ({title, mode ,setMode}: NavigatorType) => {
 
-    const {createLocationUrl,weatherData ,sortWeatherData} = UseWeatherAppContext();
+    const {createLocationUrl, weatherData ,sortWeatherData} = UseWeatherAppContext();
 
-
-   return (
-      <div className="flex flex-col w-full min-h-[210px] p-6 bg-white rounded-lg shadow-sm mb-4">
-      <Typography tag="h1" textSize="2xl" textColor="blue" textPosition="center">🚀 {title}</Typography>
-      <div className="flex flex-col md:flex-row justify-between items-start w-full min-h-[200px] mt-6 md:mt-0">
-      <Switch<SwitchModeType> label="Mode" values={SwitchData} stateValue={mode} setStateValue={setMode} />
-      {mode === 'Search' ? <WeatherSearchBar createLocationUrl={createLocationUrl}/> : <></>}
-       {mode === "Filter" && weatherData.length >= 2 ?
-        <SelectInput<PollutionSelectDataType>
-            title="sort by largest value"
-            items={PollutionSelectData}
-            handleValue={sortWeatherData}
-            border="oceanBlue"
-            size="medium"
-         />
-         : <></>}
-      </div>
-      </div>
+   return useMemo(()=> {
+    return (
+        <div className="flex flex-col w-full min-h-[210px] p-6 bg-white rounded-lg shadow-sm mb-4">
+        <Typography tag="h1" textSize="2xl" textColor="blue" textPosition="center">🚀 {title}</Typography>
+        <div className="flex flex-col justify-between w-full min-h-[200px] mt-6 md:mt-0">
+        <Switch<SwitchModeType> label="Mode" values={SwitchData} stateValue={mode} setStateValue={setMode} />
+        {mode === 'Search' ? <WeatherSearchBar createLocationUrl={createLocationUrl}/> : <></>}
+         {mode === "Filter" && weatherData.length >= 2 ?
+          <SelectInput<PollutionSelectDataType>
+              title="Sort By Largest Value"
+              items={PollutionSelectData}
+              handleValue={sortWeatherData}
+              border="oceanBlue"
+              size="medium"
+           />
+           : <></>}
+          </div>
+        </div>
     )
-})
+   },[createLocationUrl, mode, setMode, sortWeatherData, title, weatherData.length])
+}
