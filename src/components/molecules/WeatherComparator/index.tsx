@@ -2,9 +2,9 @@ import { memo } from "react";
 import { WeatherType } from "../../../types/api";
 import { AirPollution } from "../../../types/components/pollutionType";
 import { Typography } from "../../atoms/typography";
-import { PollutionItem } from "../../molecules/pollutionItem";
-import { WeatherCards } from "../../molecules/weatherCards";
-import { WeatherItem, WeatherItemType } from "../../molecules/weatherItem";
+import { PollutionItem } from "../pollutionItem";
+import { WeatherCards } from "../weatherCards";
+import { WeatherItem, WeatherItemType } from "../weatherItem";
 
 
 type WeatherComparatorType = {

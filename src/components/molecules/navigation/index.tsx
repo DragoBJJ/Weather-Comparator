@@ -6,7 +6,7 @@ import { SwitchData, SwitchModeType } from "../../../types/eventType"
 import Switch from "../../atoms/Switch"
 import { SelectInput } from "../../atoms/select"
 import { Typography } from "../../atoms/typography"
-import { WeatherSearchBar } from "../../molecules/WeatherSearchBar"
+import { WeatherSearchBar } from "../WeatherSearchBar"
 
 type NavigatorType = {
 title: string

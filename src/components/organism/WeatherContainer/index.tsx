@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { UseWeatherAppContext } from "../../../context/ConfigContext";
 import { SwitchModeType } from "../../../types/eventType";
+import { WeatherComparator } from "../../molecules/WeatherComparator";
 import { WeatherEngine } from "../../molecules/WeatherEngine";
-import { WeatherComparator } from "../WeatherComparator";
-import { Navigation } from "../navigation";
+import { Navigation } from "../../molecules/navigation";
 
 export const WeatherContainer = (
   ) => {
