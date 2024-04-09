@@ -26,7 +26,7 @@ type SwitchType<T extends string> = {
     }
 
   return (
-<div role="switch" aria-checked={isSearch} onKeyDown={(e)=> handleKeyDown(e)} tabIndex={0} className='flex ml-auto hover:outline-none bg-oceanBlue text-white focus:outline-none focus:border-bg-oceanBlue focus:border-  focus:cursor-pointer justify-center items-center border-[1px] rounded-lg border-[#005a9c] p-4 w-full max-w-[320px] h-[48px] mt-4 select-none'>
+<div role="switch" aria-checked={isSearch} onKeyDown={(e)=> handleKeyDown(e)} tabIndex={0} className='flex md:ml-auto hover:outline-none bg-oceanBlue text-white focus:outline-none focus:border-bg-oceanBlue focus:border-  focus:cursor-pointer justify-center items-center border-[1px] rounded-lg border-[#005a9c] p-4 w-full max-w-[320px] h-[48px] mt-4 select-none'>
 <span className="label m-4 w-[8em] w-[200px]">{label}</span>
   <span className={`flex mx-2 justify-center items-center relative inline-block t-[6px] border-[1px] border-solid border-oceanBlue bg-white rounded-xl h-[20px] w-12`}>
     <span className={`absolute inline-block top-[2px] left-[2px] easy-in-out duration-300 rounded-lg h-[12px] w-[12px] ${isSearch ? switchDynamicStyle: " bg-primaryRed"}`}></span>
