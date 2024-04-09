@@ -1,23 +1,51 @@
-# Frontend Bootstrap
+## Project Description
 
-## Co w środku?
+### Tools and Technologies
+- [editorconfig]
+- [eslint]
+- [Prettier]
+- [React]
+-[StoryBook]
+- [Playwright]
+- [Tailwind]
+- [TypeScript]
+- [Vite]
+- [Vitest]
 
-Bootstrap projektu opartego o następujące narzędzia:
+### The key aspects of this project are:
+- Initializing a library of reusable components using Tailwind CSS
+- Unifying design rules for the entire team using tools such as nvm, ESLint, Prettier and EditorConfig
+- Documenting components using Storybook
+- Using Vite bundler to speed up the development process
+- Using the Atomic Design architectural approach
+- Using design patterns such as render props
 
-- [editorconfig](https://editorconfig.org/)
-- [eslint](https://eslint.org/)
-- [Prettier](https://prettier.io/)
-- [React](https://www.npmjs.com/package/@vitejs/plugin-react) (wymień na [Svelte](https://www.npmjs.com/package/@sveltejs/vite-plugin-svelte) lub [Vue](https://www.npmjs.com/package/@vitejs/plugin-vue))
-- [Playwright](https://playwright.dev)
-- [Tailwind](https://tailwindui.com/)
-- [TypeScript](https://www.typescriptlang.org/)
-- [Vite](https://vite.dev/)
-- [Vitest](https://vitest.dev/)
+## Structure of the project
+The project uses the Atomic Design approach, which divides the user interface into smaller, reusable components.
+The project structure is as follows:
+```bash
+src/
+├── components/
+│   ├── atoms/
+│   ├── molecules/
+│   ├── organisms/
+│   └── templates/
+```
 
-## Pierwsze kroki
-
+## First steps
 ```bash
 nvm use
 npm install
 npm run dev
+```
+
+## StoryBook
+```bash
+npm run storybook build
+npm run storybook-dev
+```
+
+## Build project
+```bash
+npm run build
 ```
