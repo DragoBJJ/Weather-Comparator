@@ -1,5 +1,5 @@
-import { Weather } from '../../../types/data';
 import { Images, ImagesType } from '../../../types/images';
+import { Weather } from '../../../types/weatherData';
 import { calculateCelciusTemp } from '../../../utils/common';
 import { Typography } from '../../atoms/typography';
 

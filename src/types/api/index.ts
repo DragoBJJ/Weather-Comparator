@@ -1,5 +1,5 @@
-import { Weather } from '../data';
-import { AirPollution } from '../pollutionData';
+import { AirPollution } from '../components/pollutionType';
+import { Weather } from '../weatherData';
 
 export type APIParam = {
   lat: number;

@@ -1,5 +1,6 @@
 import { Typography } from "../../components/atoms/typography";
-import { PollutionApiData, PollutionData } from "../../types/pollutionData";
+import { PollutionData } from "../../constant/components/pollutionData";
+import { PollutionApiData } from "../../types/components/pollutionType";
 
 export const firstLetterUpperCase = (word: string) => word.charAt(0).toUpperCase() + word.slice(1);
 

@@ -1,6 +1,7 @@
 import axios from 'axios';
 import { createWeatherConditionUrl } from '.';
-import { AirPollution, Location, Weather } from '../../types/data';
+import { AirPollution } from '../../types/components/pollutionType';
+import { Location, Weather } from '../../types/weatherData';
 
 export async function fetchData<T>(apiUrl: string | undefined) {
   if (!apiUrl) throw new Error("Your api url doesn't exist");

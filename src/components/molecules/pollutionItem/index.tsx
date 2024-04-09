@@ -1,5 +1,5 @@
 import { memo } from 'react';
-import { PollutionApiData } from '../../../types/pollutionData';
+import { PollutionApiData } from '../../../types/components/pollutionType';
 import { mapPollutionValue } from '../../../utils/common';
 import { Typography } from '../../atoms/typography';
 

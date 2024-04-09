@@ -1,6 +1,6 @@
 import { memo } from "react";
 import { WeatherType } from "../../../types/api";
-import { AirPollution } from "../../../types/data";
+import { AirPollution } from "../../../types/components/pollutionType";
 import { PollutionItem } from "../../molecules/pollutionItem";
 import { WeatherCards } from "../../molecules/weatherCards";
 import { WeatherItem, WeatherItemType } from "../../molecules/weatherItem";

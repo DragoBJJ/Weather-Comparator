@@ -1,6 +1,6 @@
 import { AIR_POLLUTION_URL, LOCATION_API, WEATHER_URL } from '../../constant/api';
 import { APIGeoParam, APIParam } from '../../types/api';
-import { Location } from '../../types/data';
+import { Location } from '../../types/weatherData';
 
 export const buildWeatherUrl = ({ lat, lon, apiKey }: APIParam) => {
   const dynamicParams = `lat=${String(lat)}&lon=${String(lon)}&appid=${apiKey}`;

@@ -1,6 +1,6 @@
 import { memo } from "react"
-import { Weather } from "../../../types/data"
-import { AirPollution } from "../../../types/pollutionData"
+import { AirPollution } from "../../../types/components/pollutionType"
+import { Weather } from "../../../types/weatherData"
 import { WeatherItemType } from "../weatherItem"
 
 

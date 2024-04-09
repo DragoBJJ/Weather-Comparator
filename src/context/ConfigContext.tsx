@@ -1,6 +1,6 @@
 import { ReactNode, createContext, useContext, useState } from 'react';
 import { WeatherType } from '../types/api';
-import { AirPollutionKey } from '../types/pollutionData';
+import { AirPollutionKey } from '../types/components/pollutionType';
 import { buildLocationUrl } from '../utils/api';
 
 type ConfigProviderProps =  {

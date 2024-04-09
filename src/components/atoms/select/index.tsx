@@ -1,7 +1,7 @@
 
 import { memo } from 'react';
 import { InputBorderVariants, SelectSizeVariants } from '../../../constant/styles/input';
-import { InpuBorderKey, SizeKey } from '../../../types/input';
+import { InpuBorderKey, SizeKey } from '../../../types/components/inputType';
 import { mapDictValueToOption } from '../../../utils/common';
 
  type SelectProps<T extends Record<string,string>> = {
