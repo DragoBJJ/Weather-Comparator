@@ -16,7 +16,7 @@ export const WeatherContainer = (
       <Navigation
         mode={mode}
         setMode={setMode}
-        title="Weather App"
+        title="Drago Weather App"
         />
        {locationUrl && mode === "Search" ?
        <WeatherEngine
