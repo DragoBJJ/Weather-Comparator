@@ -12,5 +12,7 @@ jobs:
         run: npm ci
       - name: install playwright browsers
         run: npx playwright install --with-deps
-      - name: npm run test e2e
+      - name: run test e2e
         run: npm run test:e2e
+        env:
+          E2E_URL: https://darling-brigadeiros-b9e89a.netlify.app
