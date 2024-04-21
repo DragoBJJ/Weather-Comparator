@@ -26,18 +26,19 @@ export const WeatherEngine = memo<WeatherEngineType>(({locationUrl, setWeatherDa
     const {weatherData, pollutionData} = data ?? {};
 
   return (
-    <div className="flex flex-col lg:flex-row justify-center items-center w-full h-full">
-     <WeatherCards
-        weatherCard={({weatherData}: WeatherItemType)=> {
-              return <WeatherItem weatherData={weatherData}/>
-            }}
-        atmosphericCard={(data: AirPollution["list"][0]) => {
-              return <PollutionItem {...data}/>
-            }}
-          weatherData={weatherData}
-          pollutionData={pollutionData}
-        />
-
+    weatherData && pollutionData ?  (
+      <div role="contentinfo" className="flex flex-col lg:flex-row justify-center items-center w-full h-full">
+        <WeatherCards
+          weatherCard={({weatherData}: WeatherItemType)=> {
+                return <WeatherItem weatherData={weatherData}/>
+              }}
+          atmosphericCard={(data: AirPollution["list"][0]) => {
+                return <PollutionItem {...data}/>
+              }}
+            weatherData={weatherData}
+            pollutionData={pollutionData}
+          />
     </div>
+    ): <></>
   )
 })
