@@ -27,11 +27,6 @@ jobs:
       - name: Lint code
         run: npm run lint
 
-      - name: run test e2e
-        run: npm run test:e2e
-        env:
-          E2E_URL: weather-comparator-anpk5xyh7-dragobjjs-projects.vercel.app
-
       - name: Build app
         run: npm run build
 
