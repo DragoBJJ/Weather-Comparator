@@ -38,6 +38,7 @@
     "eslint-plugin-react": "7.34.0",
     "eslint-plugin-react-hooks": "4.6.0",
     "eslint-plugin-storybook": "^0.6.13",
+    "playwright-msw": "3.0.1",
     "postcss": "8.4.35",
     "prettier": "3.2.5",
     "storybook": "^7.4.1",
