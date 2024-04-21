@@ -1,8 +1,11 @@
 name: "Tests: E2E"
 on:
-  push:
-    branches:
-        - master
+  workflow_dispatch:
+    inputs:
+      tests-on-netlify:
+        type: boolean
+        description: Enable Tests on Netligy
+        default: true
 jobs:
   tests_e2e:
     name: Run end-to-end tests
