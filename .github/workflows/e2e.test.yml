@@ -10,8 +10,6 @@ jobs:
       - uses: actions/setup-node@v3
       - name: install dependencies
         run: npm ci
-      - name: install playwright browsers
-        run: npx playwright install --with-deps
       - name: run test e2e
         run: npm run test:e2e
         env:
