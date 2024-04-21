@@ -1,11 +1,8 @@
 name: Build and Deploy to Netlify
 on:
-  workflow_dispatch:
-    inputs:
-      deploy-netlify:
-        type: boolean
-        description: Enable Netlify deployment
-        default: true
+  push:
+    branches:
+        - master
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -20,6 +17,9 @@ jobs:
 
       - name: Install dependencies
         run: npm ci
+
+      - name: Lint code
+        run: npm run lint
 
       - name: Build app
         run: npm run build
