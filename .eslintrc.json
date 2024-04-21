@@ -13,9 +13,7 @@
   "rules": {
     "react/react-in-jsx-scope": "off",
     "react/display-name": "off",
-    "react/prop-types": "off",
-    "@typescript-eslint/require-await": "error",
-    "@typescript-eslint/no-floating-promises": "error"
+    "react/prop-types": "off"
   },
   "settings": { "react": { "version": "detect" } }
 }
