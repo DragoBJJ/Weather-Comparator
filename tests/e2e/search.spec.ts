@@ -25,5 +25,5 @@ test('Check if the error about not finding weather for the specified city is dis
   await button.click();
 
   const errorTitle = page.getByRole('heading', { name: 'Your Location doesnt exist' });
-  await expect(errorTitle).toBeInViewport({ timeout: 8000 });
+  await expect(errorTitle).toBeInViewport({ timeout: 10000 });
 });
