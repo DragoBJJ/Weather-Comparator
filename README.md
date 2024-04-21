@@ -1,4 +1,4 @@
-## Project Description
+## Project Weather Description
 
 ### Tools and Technologies
 - [editorconfig]
