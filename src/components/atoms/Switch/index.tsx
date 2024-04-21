@@ -18,8 +18,6 @@ type SwitchType<T extends string> = {
     const switchDynamicStyle = `bg-oceanBlue translate-x-[25px] border-green ml-auto`;
     const isFirstValue = stateValue === values[0];
 
-    console.log("isFirstValue", isFirstValue)
-
     const handleKeyDown =(e: KeyboardType) => {
         if(keyOptions[e.code])  {
           const handleValue = isFirstValue ? values[1]: values[0];
