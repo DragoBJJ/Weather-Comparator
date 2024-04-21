@@ -1,4 +1,4 @@
-name: pull request - Deploy to Vercelworkflow_dispatch
+name: pull request - Deploy to Vercel
 on:
   workflow_dispatch:
     inputs:
