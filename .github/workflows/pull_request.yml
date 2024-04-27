@@ -2,7 +2,7 @@ name:  Build & test & Deploy to Vercel
 on:
   push:
     branches:
-       - master
+       - main
 jobs:
   deploy:
     env:
