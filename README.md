@@ -1,4 +1,4 @@
-## Project Weather Description - Drago
+## Project Weather Description
 
 ### Tools and Technologies
 - [editorconfig]
