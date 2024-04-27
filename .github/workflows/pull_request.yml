@@ -1,4 +1,4 @@
-name:  Build & test & Deploy to Vercel
+name: Build app and Deploy to Vercel
 on:
   push:
     branches:
