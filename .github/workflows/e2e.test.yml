@@ -22,4 +22,4 @@ jobs:
       - name: run test e2e
         run: npm run test:e2e
         env:
-          E2E_URL: https://weather-comparator-el1wwpd6y-dragobjjs-projects.vercel.app
+          E2E_URL: https://weather-comparator-fu58n4k8s-dragobjjs-projects.vercel.app/
