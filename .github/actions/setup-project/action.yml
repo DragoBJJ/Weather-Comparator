@@ -5,7 +5,7 @@ runs:
  using: 'composite'
  steps:
   - name: Configure node
-    uses: actions/setup-node@v4s
+    uses: actions/setup-node@v4
     with:
      node-version-file: '.nvmrc'
   - name: install dependencies
