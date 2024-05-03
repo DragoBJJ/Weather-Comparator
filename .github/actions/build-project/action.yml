@@ -1,0 +1,12 @@
+name: Build app
+description: Build & Lint app
+
+runs:
+ using: 'composite'
+ steps:
+  - name: Lint code
+    run: npm run lint
+    shell: bash
+  - name: Build app
+    run: npm run build
+    shell: bash
