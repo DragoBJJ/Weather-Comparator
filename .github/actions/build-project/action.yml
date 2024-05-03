@@ -4,10 +4,7 @@ description: Build & Lint app
 runs:
  using: 'composite'
  steps:
-    - name: Lint code
+   - name: Lint code
         run: npm run lint
-
-    - name: Build app
+   - name: Build app
         run: npm run build
-        env:
-          VITE_ENVIRONMENT: ${{ env.VITE_VERCEL_ENV }}
