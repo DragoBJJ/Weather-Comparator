@@ -1,6 +1,6 @@
 /// <reference types="vite/client" />
 
-// Rozszerzenie obiektu import.meta.env przez nową zmienną środowiskową
+// Rozszerzenie obiektu import.meta.env przez nową zmienną środowiskową
 interface ImportMetaEnv {
   readonly VITE_ENVIRONMENT: string;
 }

@@ -41,5 +41,5 @@ export const Navigation = ({title, mode ,setMode}: NavigatorType) => {
           </div>
         </div>
     )
-   },[createLocationUrl, mode, setMode, sortWeatherData, title, weatherData.length])
+   },[appInfo, createLocationUrl, mode, setMode, sortWeatherData, title, weatherData.length])
 }
