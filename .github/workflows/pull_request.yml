@@ -18,13 +18,8 @@ jobs:
       - name: Configure node
         uses: ./.github/actions/setup-project
 
-      - name: Lint code
-        run: npm run lint
-
-      - name: Build app
-        run: npm run build
-        env:
-          VITE_ENVIRONMENT: ${{ env.VITE_VERCEL_ENV }}
+      - name: Build & Lint project
+        uses: ./.github/actions/build-project
 
       - name: Deploy to vercel - preview mode
         uses: ./.github/actions/deploy
