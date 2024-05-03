@@ -7,7 +7,7 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     environment:
-      name: 'Development'
+      name: 'Staging'
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
