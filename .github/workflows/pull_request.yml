@@ -22,7 +22,7 @@ jobs:
         run: npm run lint
 
       - name: Build app
-        run: tsc && vite build --mode staging
+        run: npm run build
         env:
           VITE_ENVIRONMENT: ${{ env.VITE_ENVIRONMENT}}
 
