@@ -12,7 +12,7 @@ export default defineConfig(({ mode }) => {
     },
     define: {
       __APP_VERSION__: JSON.stringify(version),
-      'process.env.API_KEY': JSON.stringify(env.WEATHER_API_KEY),
+      'process.env.API_KEY': JSON.stringify(env.API_KEY),
     },
     server: {
       port: 3000,
