@@ -18,10 +18,16 @@ export const Navigation = ({title, mode ,setMode}: NavigatorType) => {
 
     const {createLocationUrl, weatherData ,sortWeatherData} = UseWeatherAppContext();
 
+    const {VITE_ENVIRONMENT, VITE_VERCEL_ENV} = import.meta.env || {}
+
+    const envVersion = VITE_VERCEL_ENV === "production" ? "" : VITE_ENVIRONMENT || VITE_VERCEL_ENV
+    const appInfo = envVersion && __APP_VERSION__ ? `App Version: ${__APP_VERSION__} & environment: ${envVersion}`: ""
+
    return useMemo(()=> {
     return (
         <div className="flex flex-col w-full min-h-[210px] p-6 bg-white rounded-lg shadow-sm mb-4">
         <Typography tag="h1" textSize="2xl" textColor="blue" textPosition="center">🚀 {title}</Typography>
+        {appInfo ? <Typography tag="h1" textSize="xl" textColor="blue" textPosition="center">🚀 {appInfo}</Typography>: <></>}
         <div className="flex flex-col justify-between w-full min-h-[200px] mt-6 md:mt-0">
         <Switch<SwitchModeType> label="Mode" values={SwitchData} stateValue={mode} setStateValue={setMode} />
         {mode === 'Search' ? <WeatherSearchBar createLocationUrl={createLocationUrl}/> : <></>}
@@ -37,5 +43,5 @@ export const Navigation = ({title, mode ,setMode}: NavigatorType) => {
           </div>
         </div>
     )
-   },[createLocationUrl, mode, setMode, sortWeatherData, title, weatherData.length])
+   },[appInfo, createLocationUrl, mode, setMode, sortWeatherData, title, weatherData.length])
 }
