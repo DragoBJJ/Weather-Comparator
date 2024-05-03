@@ -18,7 +18,7 @@ export const Navigation = ({title, mode ,setMode}: NavigatorType) => {
 
     const {createLocationUrl, weatherData ,sortWeatherData} = UseWeatherAppContext();
 
-    const {VITE_ENVIRONMENT, VITE_VERCEL_ENV} = import.meta.env || {}
+    const {VITE_ENVIRONMENT, VITE_VERCEL_ENV} = import.meta.env || {};
 
     const envVersion = VITE_VERCEL_ENV === "production" ? "" : VITE_ENVIRONMENT || VITE_VERCEL_ENV
     const appInfo = envVersion && __APP_VERSION__ ? `App Version: ${__APP_VERSION__} & environment: ${envVersion}`: ""
