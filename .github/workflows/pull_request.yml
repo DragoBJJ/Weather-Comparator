@@ -24,13 +24,13 @@ jobs:
       - name: Build app
         run: npm run build
         env:
-          VITE_ENVIRONMENT: staging
+          VITE_ENVIRONMENT: ${{ env.VITE_VERCEL_ENV }}
 
       - name: Deploy to vercel - preview mode
         uses: ./.github/actions/deploy
         with:
           mode: "preview"
-          vercel-token: ${{ env.VITE_VERCEL_ENV }}
+          vercel-token: ${{ env.VERCEL_TOKEN }}
         env:
             VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
             VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
