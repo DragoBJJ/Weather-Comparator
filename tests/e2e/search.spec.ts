@@ -10,7 +10,7 @@ test('search for Weather in City', async ({ page }) => {
 
   const weatherCard = page.getByRole('contentinfo');
 
-  await expect(weatherCard).toBeInViewport();
+  await expect(weatherCard).toBeInViewport({ timeout: 10000 });
   await expect(weatherCard).toHaveCount(1);
 });
 

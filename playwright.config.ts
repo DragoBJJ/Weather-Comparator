@@ -1,14 +1,16 @@
 import { defineConfig, devices } from '@playwright/test';
-
+import dotenv from 'dotenv';
+dotenv.config();
 /**
  * Read environment variables from file.
  * https://github.com/motdotla/dotenv
  */
 // require('dotenv').config();
 
-/**
+/**P
  * See https://playwright.dev/docs/test-configuration.
  */
+
 export default defineConfig({
   testDir: './tests/e2e/',
   fullyParallel: true,
