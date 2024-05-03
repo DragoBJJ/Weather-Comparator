@@ -4,7 +4,7 @@ description: Build & Lint app
 runs:
  using: 'composite'
  steps:
-   - name: Lint code
-      run: npm run lint
-   - name: Build app
-      run: npm run build
+  - name: Lint code
+    run: npm run lint
+  - name: Build app
+    run: npm run build
