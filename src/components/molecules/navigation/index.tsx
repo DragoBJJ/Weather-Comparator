@@ -18,9 +18,8 @@ export const Navigation = ({title, mode ,setMode}: NavigatorType) => {
 
     const {createLocationUrl, weatherData ,sortWeatherData} = UseWeatherAppContext();
 
-
     const envVersion = import.meta.env.VITE_ENVIRONMENT || "";
-    const appInfo = envVersion && __APP_VERSION__ ? `App Version: ${__APP_VERSION__} & ENVIRONMENT: ${envVersion}`: ""
+    const appInfo = envVersion && __APP_VERSION__ ? `App Version: ${__APP_VERSION__} & environment: ${envVersion}`: ""
 
    return useMemo(()=> {
     return (
