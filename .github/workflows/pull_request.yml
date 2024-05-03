@@ -22,9 +22,9 @@ jobs:
         run: npm run lint
 
       - name: Build app
-        run: npm run build
+        run: tsc && vite build" --mode staging
         env:
-          VITE_ENVIRONMENT: preview
+          VITE_ENVIRONMENT: ${{ env.VITE_ENVIRONMENT}}
 
       - name: Deploy to vercel - preview mode
         uses: ./.github/actions/deploy

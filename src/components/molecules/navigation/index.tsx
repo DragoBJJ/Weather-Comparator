@@ -21,6 +21,8 @@ export const Navigation = ({title, mode ,setMode}: NavigatorType) => {
     const envVersion = import.meta.env.VITE_ENVIRONMENT || "";
     const appInfo = envVersion && __APP_VERSION__ ? `App Version: ${__APP_VERSION__} & environment: ${envVersion}`: ""
 
+console.log("envVersion",envVersion)
+
    return useMemo(()=> {
     return (
         <div className="flex flex-col w-full min-h-[210px] p-6 bg-white rounded-lg shadow-sm mb-4">
