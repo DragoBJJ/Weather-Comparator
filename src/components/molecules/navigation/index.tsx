@@ -20,6 +20,9 @@ export const Navigation = ({title, mode ,setMode}: NavigatorType) => {
 
     const {VITE_ENVIRONMENT, VITE_VERCEL_ENV} = import.meta.env || {};
 
+
+    console.log("VITE_ENVIRONMENT",VITE_ENVIRONMENT)
+
     const envVersion = VITE_VERCEL_ENV === "production" ? "" : VITE_ENVIRONMENT || VITE_VERCEL_ENV
     const appInfo = envVersion && __APP_VERSION__ ? `App Version: ${__APP_VERSION__} & environment: ${envVersion}`: ""
 
