@@ -6,5 +6,7 @@ runs:
  steps:
   - name: Lint code
     run: npm run lint
+    shell: bash
   - name: Build app
     run: npm run build
+    shell: bash
